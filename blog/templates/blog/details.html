@@ -1,0 +1,10 @@
+<h1>{{blog.blog_title}}</h1>
+<p>{{blog.pb_date}}</p>
+<p>{{blog.blog_content}}</p>
+<p>~{{blog.author}}</p>
+<p>{{blog.category}}</p>
+<p>{{blog.tag}}</p>
+
+<a href="{% url 'blog:update' pk=blog.pk %}">edit</a>
+<a href="{% url 'blog:confirm_delete' pk=blog.pk %}">Delete blog</a>
+<a href="{% url 'blog:index' %}">Back</a>

@@ -1,0 +1,19 @@
+{% if blog.pk %}
+
+<h1>Edit Blog</h1>
+<form action="{% url 'blog:update' pk=blog.pk %}" method="post">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit">Post</button>
+</form>
+<a href="{% url 'blog:details' pk=blog.pk %}">Back</a>
+<a href="{% url 'blog:confirm_delete' pk=blog.pk %}">Delete blog</a>
+{% else %}
+
+<h1>Create Blog</h1>
+<form action="{% url 'blog:create' %}" method="post">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit">Post</button>
+</form>
+<a href="{% url 'blog:index' %}">Back</a>
+
+{% endif %}

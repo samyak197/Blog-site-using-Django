@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+  </head>
+  <body>
+    <h1>Latest Blog Posts</h1>
+    <ul>
+      {% for blog in latest_blog_list %}
+      <li>
+        <a href="{% url 'blog:details' pk=blog.pk %}"
+          ><h2>{{blog.blog_title}}</h2></a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'blog:create' %}">Create New BLog</a>
+  </body>
+</html>
